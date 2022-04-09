@@ -1,0 +1,1 @@
+cmd /k .\Scripts\setup-env.bat
