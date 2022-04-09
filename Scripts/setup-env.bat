@@ -1,5 +1,5 @@
 
-echo off
+@echo off
 :: Stepup the anaconda env
 set path=%path%;%userprofile%\anaconda3\Scripts\
 call conda env list | findstr /R "^cv-nd " > nul
@@ -13,13 +13,11 @@ if errorlevel 1 (
     conda install pytorch-cpu -c pytorch
 
     :: Install python dependencies in the current virtual env
-    pip install -r .\cd0360-Introduction-to-Computer-Vision\requirements.txt
-    pip install opencv-python==3.4.17.63
-    pip install torchvision==0.9.1
+    pip install -r .\Scripts\requirements.txt
     
 ) else (
     echo "Environment activated"
-    echo off
+    @echo off
     call activate cv-nd
 )
 echo on
